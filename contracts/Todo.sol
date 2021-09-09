@@ -6,7 +6,6 @@ contract Todos {
     lastTaskId = 0;
   }
 
- 
   struct Task {
     uint256 id;
     uint256 date;
@@ -18,7 +17,7 @@ contract Todos {
 
   uint256[] taskIds;
   uint256 public lastTaskId;
-  mapping(uint256 => Task) tasks;
+  mapping(uint256 => Task) public tasks;
 
   modifier checkIfTaskIdExists(uint256 id) {
     if (id == 0) {
